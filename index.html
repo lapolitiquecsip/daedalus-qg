@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>QG · DAEDALUS</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0b0d12">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="QG">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icones/icone.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icones/icone-180.png">
+  <link rel="preconnect" href="https://rsudvwqgjesswmssqcvi.supabase.co">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Connexion -->
+  <section id="connexion" class="connexion" hidden>
+    <div class="connexion-carte">
+      <div class="marque"><span class="logo">D</span><span>QG</span></div>
+      <h1>Le QG de tes agents</h1>
+      <p class="sous">Suivre leur travail, valider leurs actions.</p>
+      <form id="form-connexion">
+        <label>E-mail<input type="email" name="email" autocomplete="username" required></label>
+        <label>Mot de passe<input type="password" name="mdp" autocomplete="current-password" required></label>
+        <button class="bouton principal" type="submit">Entrer</button>
+        <p class="erreur" id="erreur-connexion" hidden></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Application -->
+  <div id="app" class="app" hidden>
+    <nav class="barre" aria-label="Rubriques">
+      <div class="marque"><span class="logo">D</span><span>QG</span></div>
+      <a href="#valider" data-vue="valider"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>À valider</span><b class="pastille" id="compte-valider" hidden></b></a>
+      <a href="#equipe" data-vue="equipe"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c.8-3.2 3-5 5.5-5s4.7 1.8 5.5 5"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c2.2.2 3.9 1.8 4.6 4.8"/></svg><span>L'équipe</span></a>
+      <a href="#activite" data-vue="activite"><svg viewBox="0 0 24 24"><path d="M4 12h3l2.5-6 5 12L17 12h3"/></svg><span>Activité</span></a>
+      <a href="#sante" data-vue="sante"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg><span>Santé</span></a>
+      <button class="deconnexion" id="deconnexion" title="Se déconnecter"><svg viewBox="0 0 24 24"><path d="M15 4h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3M10 16l-4-4 4-4M6 12h10"/></svg></button>
+    </nav>
+
+    <main class="contenu">
+      <header class="entete">
+        <div>
+          <p class="surtitre" id="surtitre"></p>
+          <h1 id="titre-vue"></h1>
+        </div>
+        <span class="direct" id="direct" title="Mises à jour en direct"><i></i>En direct</span>
+      </header>
+      <div id="vue"></div>
+    </main>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
