@@ -152,13 +152,91 @@ input:focus, textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 4px
 .agent time { color: var(--pale); font-size: 12px; white-space: nowrap; }
 .equipe-vide { padding: 16px; color: var(--pale); font-size: 13px; }
 
+/* ── Portraits ── */
+.portrait { position: relative; display: inline-grid; flex: none; width: var(--t); height: var(--t); }
+.portrait img, .portrait > span {
+  width: var(--t); height: var(--t); border-radius: 50%; display: grid; place-items: center; object-fit: cover;
+  color: #fff; font-weight: 800; font-size: calc(var(--t) * .4); background: var(--fond);
+  box-shadow: 0 0 0 2px var(--carte), 0 2px 8px -2px rgba(11, 13, 18, .18);
+}
+.portrait > .etat {
+  position: absolute; right: -1px; bottom: -1px; width: calc(var(--t) * .28); height: calc(var(--t) * .28); min-width: 10px; min-height: 10px;
+  border-radius: 50%; border: 2.5px solid var(--carte); background: var(--pale);
+}
+.portrait > .etat.ok { background: var(--vert); } .portrait > .etat.attention { background: var(--orange); } .portrait > .etat.panne { background: var(--rouge); }
+
+/* ── Organigramme ── */
+.tete-orga { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; margin-bottom: 18px; }
+.tete-orga .noeud { min-width: 0; flex: 1 1 240px; max-width: 360px; }
+.noeud { display: flex; align-items: center; gap: 12px; background: var(--carte); border: 1px solid var(--trait); border-radius: 18px; padding: 12px 16px; box-shadow: var(--ombre); }
+.noeud b { display: block; } .noeud small { color: var(--doux); font-size: 13px; }
+.fleche { width: 18px; height: 18px; border-right: 2px solid var(--trait); border-bottom: 2px solid var(--trait); transform: rotate(-45deg); flex: none; }
+@media (max-width: 640px) { .fleche { transform: rotate(45deg); width: 12px; height: 12px; } }
+.outils-equipe { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--fond) 92%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 10px 0 2px; margin-bottom: 8px; }
+.recherche { display: flex; align-items: center; gap: 10px; background: var(--carte); border: 1px solid var(--trait); border-radius: 14px; padding: 0 14px; margin-bottom: 10px; }
+.recherche svg { width: 18px; height: 18px; color: var(--pale); }
+.recherche input { border: 0; background: transparent; padding: 12px 0; box-shadow: none !important; }
+.puce { display: inline-block; width: 8px; height: 8px; border-radius: 3px; margin-right: 6px; vertical-align: 1px; }
+.equipe-bloc { margin-top: 22px; }
+.equipe-entete { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding-left: 12px; border-left: 4px solid var(--c); margin-bottom: 12px; }
+.equipe-entete h3 { margin: 0; font-size: 19px; letter-spacing: -.02em; }
+.equipe-entete span { color: var(--pale); font-size: 13px; font-weight: 600; white-space: nowrap; }
+.rouge { color: var(--rouge); }
+.service-titre { display: flex; align-items: center; gap: 8px; margin: 18px 0 8px; font-size: 12px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; color: var(--doux); }
+.service-titre span { background: var(--trait); color: var(--doux); border-radius: 999px; padding: 1px 8px; font-size: 11px; letter-spacing: 0; }
+.grille-agents { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; }
+@media (max-width: 520px) { .grille-agents { grid-template-columns: 1fr; } }
+.agent-carte {
+  font: inherit; text-align: left; color: inherit; cursor: pointer; display: flex; align-items: center; gap: 12px;
+  background: var(--carte); border: 1px solid var(--trait); border-radius: 16px; padding: 12px; box-shadow: var(--ombre);
+  transition: transform .12s, box-shadow .12s, border-color .12s;
+}
+.agent-carte:hover { transform: translateY(-1px); border-color: color-mix(in srgb, var(--accent) 35%, var(--trait)); }
+.agent-carte:active { transform: scale(.99); }
+.agent-texte { display: grid; min-width: 0; }
+.agent-texte b { font-size: 15px; }
+.agent-texte small { color: var(--doux); font-size: 12.5px; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.agent-texte em { font-style: normal; color: var(--pale); font-size: 12px; margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.agent-ligne { font: inherit; color: inherit; text-align: left; width: 100%; background: none; border: 0; cursor: pointer; }
+.agent-ligne .metier { color: var(--pale); font-size: 12px; font-weight: 600; }
+
+/* ── Fiche d'un agent ── */
+.fiche-fond { position: fixed; inset: 0; z-index: 30; background: rgba(11, 13, 18, 0); transition: background .2s; display: flex; align-items: flex-end; justify-content: center; }
+.fiche-fond.ouvert { background: rgba(11, 13, 18, .45); }
+.fiche {
+  position: relative; width: 100%; max-height: 88dvh; overflow-y: auto; background: var(--carte); border-radius: 24px 24px 0 0;
+  padding: 26px 22px calc(26px + env(safe-area-inset-bottom)); transform: translateY(100%); transition: transform .22s cubic-bezier(.2, .8, .2, 1);
+}
+.fiche-fond.ouvert .fiche { transform: none; }
+@media (min-width: 900px) {
+  .fiche-fond { justify-content: flex-end; align-items: stretch; }
+  .fiche { width: 420px; max-height: none; border-radius: 0; transform: translateX(100%); padding: 32px 28px; }
+}
+.fermer { position: absolute; top: 14px; right: 14px; width: 36px; height: 36px; border-radius: 50%; border: 0; background: var(--fond); color: var(--doux); display: grid; place-items: center; cursor: pointer; }
+.fermer svg { width: 16px; height: 16px; }
+.fiche-tete { text-align: center; display: grid; justify-items: center; gap: 4px; }
+.fiche-tete h2 { margin: 10px 0 0; font-size: 24px; letter-spacing: -.02em; }
+.fiche-tete p { margin: 0; color: var(--doux); }
+.fiche-tete .risques { justify-content: center; }
+.fiche-infos { margin: 22px 0 0; display: grid; gap: 2px; background: var(--fond); border-radius: 16px; padding: 4px 16px; }
+.fiche-infos div { padding: 12px 0; border-bottom: 1px solid var(--trait); }
+.fiche-infos div:last-child { border-bottom: 0; }
+.fiche-infos dt { font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--pale); }
+.fiche-infos dd { margin: 3px 0 0; font-size: 14.5px; }
+.fiche-infos small { color: var(--doux); }
+.etat-texte { font-weight: 700; } .etat-texte.ok { color: var(--vert); } .etat-texte.attention { color: var(--orange); } .etat-texte.panne { color: var(--rouge); }
+
 /* ── Activité ── */
+.avec-badge { position: relative; display: inline-grid; }
+.avec-badge .badge { position: absolute; right: -4px; bottom: -4px; width: 18px; height: 18px; border-radius: 50%; background: var(--carte); display: grid; place-items: center; box-shadow: 0 0 0 2px var(--carte); }
+.avec-badge .badge svg { width: 12px; height: 12px; }
+.badge.g-succes { color: var(--vert); } .badge.g-panne { color: var(--rouge); } .badge.g-attention { color: var(--orange); } .badge.g-decision { color: var(--accent); } .badge.g-info { color: var(--doux); }
 .filtres { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; margin-bottom: 12px; scrollbar-width: none; }
 .filtres::-webkit-scrollbar { display: none; }
 .filtre { flex: none; font: inherit; font-size: 13px; font-weight: 700; border: 1px solid var(--trait); background: var(--carte); color: var(--doux); border-radius: 999px; padding: 7px 14px; cursor: pointer; }
 .filtre.actif { background: var(--encre); color: var(--fond); border-color: var(--encre); }
 .jour { font-size: 12px; font-weight: 800; color: var(--pale); text-transform: uppercase; letter-spacing: .08em; margin: 22px 0 8px; }
-.evenement { display: grid; grid-template-columns: 28px 1fr auto; gap: 10px; align-items: start; padding: 10px 0; border-bottom: 1px solid var(--trait); }
+.evenement { display: grid; grid-template-columns: 34px 1fr auto; gap: 10px; align-items: start; padding: 10px 0; border-bottom: 1px solid var(--trait); }
 .evenement .icone { width: 28px; height: 28px; border-radius: 9px; display: grid; place-items: center; background: var(--fond); }
 .evenement .icone svg { width: 15px; height: 15px; }
 .evenement .icone.succes { color: var(--vert); } .evenement .icone.panne { color: var(--rouge); } .evenement .icone.attention { color: var(--orange); } .evenement .icone.decision { color: var(--accent); }

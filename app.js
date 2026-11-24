@@ -76,17 +76,21 @@ const DONNEES_DEMO = {
     { id: "44444444-4444-4444-8444-444444444444", equipe: "marketing", agent: "Noémie · publications", titre: "Post LinkedIn : le budget 2027 en 5 chiffres", statut: "executee", decide_par: "whatsapp", decide_le: il(190), cree_le: il(260), apercu: {} },
   ],
   qg_agents: [
-    { id: "a1", prenom: "Noémie", equipe: "marketing", role: "Prépare et publie les posts Instagram et LinkedIn", rythme: "chaque soir", dernier_etat: "ok", dernier_passage: il(30) },
-    { id: "a2", prenom: "Lucie", equipe: "marketing", role: "Repère les idées de post du jour", rythme: "toutes les 15 min", dernier_etat: "ok", dernier_passage: il(9) },
-    { id: "a3", prenom: "Paul", equipe: "prospection", role: "Rédige les e-mails de prospection et les relances", rythme: "8 h et 14 h", dernier_etat: "attention", dernier_message: "Gmail pas encore branché", dernier_passage: il(300), societe: "daedalus" },
-    { id: "a4", prenom: "Corentin", equipe: "developpement", role: "Corrige les erreurs trouvées sur le site", rythme: "sur ticket", dernier_etat: "ok", dernier_passage: il(50) },
-    { id: "a5", prenom: "Louis", equipe: "production", role: "Récupère les textes de loi de l'Assemblée", rythme: "chaque nuit", dernier_etat: "ok", dernier_passage: il(400) },
-    { id: "a6", prenom: "Victor", equipe: "production", role: "Récupère les votes des députés", rythme: "chaque nuit", dernier_etat: "panne", dernier_message: "Source AN indisponible (503)", dernier_passage: il(520) },
+    { id: "a1", prenom: "Noémie", metier: "Community manager", equipe: "marketing", service: "reseaux", service_nom: "Réseaux sociaux", avatar: "icones/agents/noemie.svg", role: "Prépare et publie les posts Instagram et LinkedIn", rythme: "chaque jour à 8 h", outil: "Tâche GitHub", dernier_etat: "ok", dernier_passage: il(30) },
+    { id: "a2", prenom: "Lucie", metier: "Dénicheuse d'idées de posts", equipe: "marketing", service: "reseaux", service_nom: "Réseaux sociaux", avatar: "icones/agents/lucie.svg", role: "Repère les idées de post du jour", rythme: "toutes les 15 min", outil: "Fonction Supabase", dernier_etat: "ok", dernier_passage: il(9) },
+    { id: "a4", prenom: "Gaston", metier: "Déployeur du site", equipe: "developpement", service: "entretien", service_nom: "Données & entretien", avatar: "icones/agents/gaston.svg", role: "Reconstruit et met en ligne le site", rythme: "chaque jour à 5 h 30", outil: "Tâche GitHub", dernier_etat: "ok", dernier_passage: il(50) },
+    { id: "a7", prenom: "Hélène", metier: "Inspectrice du site", equipe: "developpement", service: "entretien", service_nom: "Données & entretien", avatar: "icones/agents/helene.svg", role: "Relit le site en ligne et liste ce qui est faux", rythme: "chaque jour à 19 h 43", outil: "Claude (coffre Obsidian)", dernier_etat: "ok", dernier_passage: il(200) },
+    { id: "a5", prenom: "Louis", metier: "Greffier des dossiers législatifs", equipe: "production", service: "parlement", service_nom: "Parlement & lois", avatar: "icones/agents/louis.svg", role: "Récupère les textes de loi de l'Assemblée", rythme: "chaque heure", outil: "Tâche GitHub", dernier_etat: "ok", dernier_passage: il(40) },
+    { id: "a8", prenom: "Simone", metier: "Rédactrice des résumés", equipe: "production", service: "parlement", service_nom: "Parlement & lois", avatar: "icones/agents/simone.svg", role: "Résume les textes en langage clair", rythme: "chaque jour à 21 h", outil: "Tâche GitHub", dernier_etat: "ok", dernier_passage: il(90) },
+    { id: "a9", prenom: "Ariane", metier: "Analyste approfondie", equipe: "production", service: "parlement", service_nom: "Parlement & lois", avatar: "icones/agents/ariane.svg", role: "Écrit l'analyse détaillée de chaque loi", rythme: "chaque heure", outil: "Tâche GitHub", dernier_etat: "attention", dernier_message: "2 échecs sur les 5 derniers passages", dernier_passage: il(70) },
+    { id: "a6", prenom: "Victor", metier: "Compteur des votes", equipe: "production", service: "votes", service_nom: "Votes & amendements", avatar: "icones/agents/victor.svg", role: "Récupère les votes des députés", rythme: "chaque jour à 23 h", outil: "Tâche GitHub", dernier_etat: "panne", dernier_message: "Source AN indisponible (503)", dernier_passage: il(520) },
+    { id: "a10", prenom: "Amélie", metier: "Veilleuse des amendements", equipe: "production", service: "votes", service_nom: "Votes & amendements", avatar: "icones/agents/amelie.svg", role: "Relève les amendements déposés", rythme: "chaque heure", outil: "Tâche GitHub", dernier_etat: "ok", dernier_passage: il(20) },
+    { id: "a11", prenom: "Jules", metier: "Secrétaire du coffre", equipe: "direction", service: "coffre", service_nom: "Coffre Obsidian", avatar: "icones/agents/jules.svg", role: "Écrit la note du jour du coffre", rythme: "chaque jour à 6 h 47", outil: "Claude (coffre Obsidian)", dernier_etat: "ok", dernier_passage: il(900) },
   ],
   qg_activite: [
     { le: il(3), equipe: "prospection", agent: "Paul", genre: "info", message: "Demande de validation : relance mairie de Sautron" },
     { le: il(14), equipe: "marketing", agent: "Noémie", genre: "info", message: "3 visuels générés pour la loi fin de vie" },
-    { le: il(52), equipe: "developpement", agent: "Corentin", genre: "succes", message: "Correction proposée : fiche sénateur sans groupe (#142)" },
+    { le: il(52), equipe: "developpement", agent: "Hélène", genre: "succes", message: "Erreur trouvée : fiche sénateur sans groupe (#142)" },
     { le: il(190), equipe: "marketing", agent: "Noémie", genre: "decision", message: "Validé sur WhatsApp : post LinkedIn budget 2027" },
     { le: il(520), equipe: "production", agent: "Victor", genre: "panne", message: "Votes de la nuit non récupérés : source AN indisponible" },
   ],
@@ -152,7 +156,7 @@ function carteDemande(d, ouverte = true) {
   return `
     <article class="carte" id="d-${d.id}">
       <div class="carte-corps">
-        <div class="meta">${etiquetteEquipe(d.equipe)}<span>${esc(d.agent)} · ${ilya(d.cree_le)}</span></div>
+        <div class="meta">${(() => { const ag = agentDe(d.agent); return ag ? avatar({ ...ag, dernier_etat: null }, 26) : ""; })()}${etiquetteEquipe(d.equipe)}<span>${esc(agentDe(d.agent)?.prenom || d.agent)} · ${ilya(d.cree_le)}</span></div>
         <h2>${esc(d.titre)}</h2>
         ${d.resume ? `<p class="resume">${esc(d.resume)}</p>` : ""}
         ${apercu}
@@ -173,30 +177,107 @@ async function vueValider() {
     ${decidees.length ? `<p class="section-titre">Décidées récemment</p><div class="liste">${decidees.map((d) => carteDemande(d, false)).join("")}</div>` : ""}`;
 }
 
+/* Portrait d'un agent (fichier local), sinon ses initiales sur la couleur de son équipe. */
+let annuaire = [];
+const agentDe = (cle) => annuaire.find((a) => a.id === cle || a.prenom === cle || (cle && String(cle).startsWith(a.prenom + " ")));
+function avatar(a, taille = 44) {
+  const etat = a?.dernier_etat ? `<i class="etat ${esc(a.dernier_etat)}"></i>` : "";
+  const fond = (EQUIPES[a?.equipe] || {}).couleur || "#9aa0ad";
+  const dedans = a?.avatar
+    ? `<img src="${esc(a.avatar)}" alt="" loading="lazy" width="${taille}" height="${taille}">`
+    : `<span style="background:${fond}">${esc((a?.prenom || "?").slice(0, 1))}</span>`;
+  return `<span class="portrait" style="--t:${taille}px">${dedans}${etat}</span>`;
+}
+
+let equipeChoisie = "toutes", recherche = "";
+const ETAT_TEXTE = { ok: "En forme", attention: "À surveiller", panne: "En panne" };
+
 async function vueEquipe() {
   const liste = await agents();
-  const parEquipe = Object.keys(EQUIPES).filter((e) => e !== "direction").map((e) => ({ e, membres: liste.filter((a) => a.equipe === e) }));
-  const ligne = (a) => `
-    <div class="agent">
-      <span class="etat ${esc(a.dernier_etat || "")}" title="${esc(a.dernier_etat || "pas encore passé")}"></span>
-      <div><b>${esc(a.prenom)}</b>${a.societe === "daedalus" ? ' <span class="etiquette">DAEDALUS</span>' : ""}<p>${esc(a.role)}${a.rythme ? ` · ${esc(a.rythme)}` : ""}</p>${a.dernier_message ? `<p>${esc(a.dernier_message)}</p>` : ""}</div>
-      <time>${ilya(a.dernier_passage)}</time>
-    </div>`;
+  annuaire = liste;
+  const q = recherche.trim().toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+  const correspond = (a) => !q || [a.prenom, a.metier, a.role, a.service_nom].join(" ").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").includes(q);
+  const ordreEquipes = ["marketing", "prospection", "developpement", "production", "direction"];
+  const compte = (e) => liste.filter((a) => a.equipe === e).length;
+  const pannes = (e) => liste.filter((a) => a.equipe === e && a.dernier_etat === "panne").length;
+
+  const carteAgent = (a) => `
+    <button class="agent-carte" data-agent="${esc(a.id)}">
+      ${avatar(a, 52)}
+      <span class="agent-texte">
+        <b>${esc(a.prenom)}</b>
+        <small>${esc(a.metier || "")}</small>
+        <em>${a.dernier_etat === "panne" ? `<span class="rouge">● ${esc(a.dernier_message || "En panne")}</span>` : esc(a.rythme || "")}</em>
+      </span>
+    </button>`;
+
+  const sections = ordreEquipes.filter((e) => equipeChoisie === "toutes" || equipeChoisie === e).map((e) => {
+    const membres = liste.filter((a) => a.equipe === e && correspond(a));
+    if (!membres.length && (q || e === "direction")) return "";
+    // Par service (Parlement & lois, Votes…), dans l'ordre du registre.
+    const services = [...new Map(membres.map((a) => [a.service || "", a.service_nom || ""])).entries()];
+    const corps = !membres.length
+      ? `<div class="equipe-vide">${e === "prospection" ? "L'équipe prospection arrive bientôt : listes de prospects, e-mails en brouillon, tri des réponses, prise de rendez-vous." : "Pas encore d'agent dans cette équipe."}</div>`
+      : services.map(([s, nom]) => `
+          ${services.length > 1 ? `<p class="service-titre">${esc(nom || "Autres")}<span>${membres.filter((a) => (a.service || "") === s).length}</span></p>` : ""}
+          <div class="grille-agents">${membres.filter((a) => (a.service || "") === s).map(carteAgent).join("")}</div>`).join("");
+    return `
+      <section class="equipe-bloc">
+        <header class="equipe-entete" style="--c:${EQUIPES[e].couleur}">
+          <h3>${esc(EQUIPES[e].nom)}</h3>
+          <span>${compte(e)} agent${compte(e) > 1 ? "s" : ""}${pannes(e) ? ` · <b class="rouge">${pannes(e)} en panne</b>` : ""}</span>
+        </header>
+        ${corps}
+      </section>`;
+  }).join("");
+
+  const coCeo = { prenom: "Co-CEO", avatar: "icones/agents/co-ceo.svg", equipe: "direction" };
   return `
-    <div class="organigramme">
-      <div class="tete">
-        <div class="noeud"><span class="avatar" style="background:#0b0d12">H</span><div><b>Hippolyte</b><small>Décide de tout ce qui sort</small></div></div>
-        <span class="lien-vertical"></span>
-        <div class="noeud"><span class="avatar" style="background:#2f5bff">C</span><div><b>Co-CEO</b><small>Regroupe les demandes · t'écrit sur WhatsApp</small></div></div>
+    <div class="tete-orga">
+      <div class="noeud"><span class="portrait" style="--t:44px"><span style="background:#0b0d12">H</span></span><div><b>Hippolyte</b><small>Décide de tout ce qui sort</small></div></div>
+      <span class="fleche"></span>
+      <div class="noeud">${avatar(coCeo, 44)}<div><b>Co-CEO</b><small>Regroupe les demandes et t'écrit sur WhatsApp</small></div></div>
+    </div>
+    <div class="outils-equipe">
+      <label class="recherche">${'<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>'}<input id="recherche-agent" type="search" placeholder="Chercher un agent, un métier…" value="${esc(recherche)}"></label>
+      <div class="filtres">
+        <button class="filtre ${equipeChoisie === "toutes" ? "actif" : ""}" data-equipe="toutes">Toutes · ${liste.length}</button>
+        ${ordreEquipes.map((e) => `<button class="filtre ${equipeChoisie === e ? "actif" : ""}" data-equipe="${e}"><i class="puce" style="background:${EQUIPES[e].couleur}"></i>${esc(EQUIPES[e].nom)} · ${compte(e)}</button>`).join("")}
       </div>
-      <div class="equipes">
-        ${parEquipe.map(({ e, membres }) => `
-          <section class="equipe-carte">
-            <div class="equipe-tete"><h3><i style="background:${EQUIPES[e].couleur}"></i>${esc(EQUIPES[e].nom)}</h3><small>${membres.length} agent${membres.length > 1 ? "s" : ""}</small></div>
-            ${membres.length ? membres.map(ligne).join("") : '<div class="equipe-vide">Pas encore d\'agent dans cette équipe.</div>'}
-          </section>`).join("")}
+    </div>
+    ${sections || '<div class="vide"><h2>Aucun agent trouvé</h2><p>Essaie un autre mot.</p></div>'}`;
+}
+
+/* Fiche d'un agent : panneau qui glisse (bas sur téléphone, côté sur ordinateur). */
+async function ouvrirFiche(id) {
+  const a = annuaire.find((x) => x.id === id);
+  if (!a) return;
+  const ev = DEMO ? [] : await lire("qg_activite", (q) => q.select("*").or(`agent.eq.${a.id},agent.ilike.${a.prenom}*`).order("le", { ascending: false }).limit(8));
+  const fond = $("#fiche");
+  fond.innerHTML = `
+    <div class="fiche" role="dialog" aria-modal="true" aria-label="${esc(a.prenom)}">
+      <button class="fermer" data-fermer aria-label="Fermer">${icone.non}</button>
+      <div class="fiche-tete">
+        ${avatar(a, 88)}
+        <h2>${esc(a.prenom)}</h2>
+        <p>${esc(a.metier || "")}</p>
+        <div class="risques">${etiquetteEquipe(a.equipe)}${a.service_nom ? `<span class="etiquette">${esc(a.service_nom)}</span>` : ""}</div>
       </div>
+      <dl class="fiche-infos">
+        <div><dt>Son rôle</dt><dd>${esc(a.role)}</dd></div>
+        <div><dt>Quand</dt><dd>${esc(a.rythme || "—")}</dd></div>
+        <div><dt>État</dt><dd><span class="etat-texte ${esc(a.dernier_etat || "")}">${esc(ETAT_TEXTE[a.dernier_etat] || "Pas encore relevé")}</span>${a.dernier_passage ? ` · dernier passage ${ilya(a.dernier_passage)}` : ""}${a.dernier_message ? `<br><small>${esc(a.dernier_message)}</small>` : ""}</dd></div>
+        <div><dt>Outil</dt><dd>${esc(a.outil || "—")}</dd></div>
+      </dl>
+      ${ev.length ? `<p class="section-titre">Ce qu'il a fait récemment</p>${ev.map((e) => `<div class="evenement"><span class="icone ${esc(e.genre)}">${ICONE_GENRE[e.genre] || icone.info}</span><div><p>${esc(e.message)}</p></div><time>${ilya(e.le)}</time></div>`).join("")}` : ""}
     </div>`;
+  fond.hidden = false;
+  requestAnimationFrame(() => fond.classList.add("ouvert"));
+}
+function fermerFiche() {
+  const fond = $("#fiche");
+  fond.classList.remove("ouvert");
+  setTimeout(() => { fond.hidden = true; fond.innerHTML = ""; }, 200);
 }
 
 let filtreActivite = "tout";
@@ -208,10 +289,11 @@ async function vueActivite() {
     const j = jourLibelle(a.le);
     const titre = j !== jourCourant ? `<p class="jour">${esc(j)}</p>` : "";
     jourCourant = j;
+    const ag = agentDe(a.agent);
     return `${titre}
       <div class="evenement">
-        <span class="icone ${esc(a.genre)}">${ICONE_GENRE[a.genre] || icone.info}</span>
-        <div><p>${a.lien ? `<a href="${esc(a.lien)}" target="_blank" rel="noopener">${esc(a.message)}</a>` : esc(a.message)}</p><small>${esc((EQUIPES[a.equipe] || {}).nom || a.equipe || "")}${a.agent ? ` · ${esc(a.agent)}` : ""}</small></div>
+        ${ag ? `<span class="avec-badge">${avatar({ ...ag, dernier_etat: null }, 34)}<i class="badge g-${esc(a.genre)}">${ICONE_GENRE[a.genre] || icone.info}</i></span>` : `<span class="icone ${esc(a.genre)}">${ICONE_GENRE[a.genre] || icone.info}</span>`}
+        <div><p>${a.lien ? `<a href="${esc(a.lien)}" target="_blank" rel="noopener">${esc(a.message)}</a>` : esc(a.message)}</p><small>${ag ? `<b>${esc(ag.prenom)}</b> · ` : ""}${esc((EQUIPES[a.equipe] || {}).nom || a.equipe || "")}${!ag && a.agent ? ` · ${esc(a.agent)}` : ""}</small></div>
         <time>${heure(a.le)}</time>
       </div>`;
   }).join("");
@@ -234,8 +316,8 @@ async function vueSante() {
       <div class="tuile"><small>Décisions en attente</small><b>${ouvertes.filter((d) => d.statut === "a_valider").length}</b></div>
     </div>
     <p class="section-titre">À surveiller</p>
-    ${aSurveiller.length ? `<div class="equipe-carte">${aSurveiller.map((a) => `
-      <div class="agent"><span class="etat ${esc(a.dernier_etat)}"></span><div><b>${esc(a.prenom)}</b><p>${esc((EQUIPES[a.equipe] || {}).nom || a.equipe)} · ${esc(a.dernier_message || "")}</p></div><time>${ilya(a.dernier_passage)}</time></div>`).join("")}</div>`
+    ${aSurveiller.length ? `<div class="equipe-carte">${aSurveiller.sort((x, y) => (x.dernier_etat === "panne" ? -1 : 1) - (y.dernier_etat === "panne" ? -1 : 1)).map((a) => `
+      <button class="agent agent-ligne" data-agent="${esc(a.id)}">${avatar(a, 40)}<div><b>${esc(a.prenom)}</b> <small class="metier">${esc(a.metier || "")}</small><p>${esc(a.dernier_message || ETAT_TEXTE[a.dernier_etat] || "")}</p></div><time>${ilya(a.dernier_passage)}</time></button>`).join("")}</div>`
       : '<div class="vide"><div class="rond">' + icone.ok + '</div><h2>Tout fonctionne</h2><p>Aucun agent en panne ni à surveiller.</p></div>'}
     <p class="section-titre">Dernières décisions</p>
     <div class="liste">${decidees.slice(0, 5).map((d) => carteDemande(d, false)).join("") || '<p class="resume">Aucune pour l\'instant.</p>'}</div>`;
@@ -254,6 +336,7 @@ async function afficher() {
   $("#titre-vue").textContent = VUES[vueCourante].titre;
   $("#surtitre").textContent = VUES[vueCourante].surtitre;
   if (!$("#vue").innerHTML) $("#vue").innerHTML = '<div class="liste"><div class="squelette"></div><div class="squelette"></div></div>';
+  if (!annuaire.length) annuaire = await agents();   // portraits dans toutes les vues
   $("#vue").innerHTML = await RENDU[vueCourante]();
   if (cible) {
     const el = document.getElementById("d-" + cible);
@@ -262,6 +345,23 @@ async function afficher() {
   majCompteur();
 }
 window.addEventListener("hashchange", () => { $("#vue").innerHTML = ""; afficher(); });
+
+// Fiche : un clic sur le fond ou Échap la ferme.
+document.addEventListener("click", (e) => { if (e.target.id === "fiche") fermerFiche(); });
+document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("#fiche").hidden) fermerFiche(); });
+// Recherche d'agent : on réaffiche en gardant le curseur dans le champ.
+let minuteurRecherche;
+document.addEventListener("input", (e) => {
+  if (e.target.id !== "recherche-agent") return;
+  recherche = e.target.value;
+  clearTimeout(minuteurRecherche);
+  minuteurRecherche = setTimeout(async () => {
+    const pos = e.target.selectionStart;
+    await afficher();
+    const champ = $("#recherche-agent");
+    if (champ) { champ.focus(); champ.setSelectionRange(pos, pos); }
+  }, 180);
+});
 
 // Décisions, modification, filtres (délégation d'événements).
 document.addEventListener("click", async (e) => {
@@ -273,6 +373,9 @@ document.addEventListener("click", async (e) => {
     return;
   }
   if (b.dataset.filtre) { filtreActivite = b.dataset.filtre; afficher(); return; }
+  if (b.dataset.equipe) { equipeChoisie = b.dataset.equipe; afficher(); return; }
+  if (b.dataset.agent) { ouvrirFiche(b.dataset.agent); return; }
+  if (b.hasAttribute("data-fermer")) { fermerFiche(); return; }
   if (b.dataset.decider) {
     const id = b.dataset.id, decision = b.dataset.decider;
     const commentaire = decision === "a_modifier" ? document.querySelector(`#modif-${id} textarea`)?.value?.trim() : null;
