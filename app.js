@@ -134,8 +134,11 @@ function carteDemande(d, ouverte = true) {
     d.cout_estime ? `<span class="etiquette">Coût ${esc(d.cout_estime)} €</span>` : "",
     d.societe === "daedalus" ? '<span class="etiquette">DAEDALUS</span>' : "",
   ].join("");
-  const apercu = (a.texte || a.image || a.lien || a.destinataire) ? `<div class="apercu">${[
-    a.image ? `<img src="${esc(a.image)}" alt="" loading="lazy">` : "",
+  const images = Array.isArray(a.images) ? a.images.filter((u) => typeof u === "string" && /^https:\/\//.test(u)) : [];
+  const apercu = (a.texte || a.image || images.length || a.lien || a.destinataire) ? `<div class="apercu">${[
+    // Un carrousel Instagram : toutes les slides, à faire défiler du doigt.
+    images.length ? `<div class="carrousel">${images.map((u, i) => `<a href="${esc(u)}" target="_blank" rel="noopener"><img src="${esc(u)}" alt="Slide ${i + 1}" loading="lazy"></a>`).join("")}</div><div class="carrousel-aide">${images.length} visuels · fais défiler →</div>`
+      : a.image ? `<img src="${esc(a.image)}" alt="" loading="lazy">` : "",
     a.destinataire ? `<div><b>À :</b> ${esc(a.destinataire)}</div>` : "",
     a.texte ? `<div class="texte">${esc(a.texte)}</div>` : "",
     a.lien ? `<a class="lien" href="${esc(a.lien)}" target="_blank" rel="noopener">Ouvrir le lien ↗</a>` : "",

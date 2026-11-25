@@ -112,6 +112,10 @@ input:focus, textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 4px
 .apercu { margin-top: 14px; border-radius: 14px; background: var(--fond); padding: 14px; font-size: 14px; word-break: break-word; display: grid; gap: 6px; }
 .apercu .texte { white-space: pre-wrap; }
 .apercu img { display: block; width: 100%; max-height: 360px; object-fit: contain; border-radius: 10px; background: var(--carte); margin-bottom: 10px; }
+.carrousel { display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 -14px; padding: 0 14px 6px; scrollbar-width: thin; }
+.carrousel a { flex: 0 0 78%; scroll-snap-align: start; }
+.carrousel img { width: 100%; max-height: none; aspect-ratio: auto; object-fit: contain; margin: 0; }
+.carrousel-aide { font-size: 12px; color: var(--doux, #777); margin-bottom: 4px; }
 .apercu .lien { display: inline-block; margin-top: 8px; color: var(--accent); font-weight: 600; text-decoration: none; }
 .risques { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
 .risque-eleve { background: color-mix(in srgb, var(--rouge) 12%, transparent); color: var(--rouge); }
